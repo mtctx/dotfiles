@@ -3,8 +3,8 @@
   "logo": {
     "type": "small",
     "color": {
-      "1": "cyan",
-      "2": "blue"
+      "1": "magenta",
+      "2": "magenta"
     },
     "padding": {
       "top": 1,
@@ -48,14 +48,29 @@
   },
   "modules": [
     "title",
-    "os",
-    "kernel",
-    "uptime",
-    "packages",
-    "cpu",
-    "memory",
-    "disk",
+    {
+        "type": "os",
+        "format": "{name} {version}"
+    },
+    {
+        "type": "cpu",
+        "format": "{name} ({cores-physical}C/{cores-logical}T) @ {freq-max}"
+    },
     "gpu",
+    {
+        "type": "memory",
+        "key": "Memory",
+        "percent": {
+            "type": 3,
+            "green": 30,
+            "yellow": 70
+        }
+    },
+    {
+        "type": "kernel",
+        "key": "Kernel"
+    },
+    "uptime",
     "shell",
     "terminal"
   ]

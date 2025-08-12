@@ -12,39 +12,46 @@ end
 bind \e\[A history-search-backward
 bind \e\[B history-search-forward
 
-# Colorful, minimal prompt
-function fish_prompt
-    set_color cyan
-    echo -n (whoami)
-    set_color yellow
-    echo -n "@"
-    set_color magenta
-    echo -n (string split '.' $hostname)[1]
-    set_color normal
-    echo -n " "
-    set_color green
-    echo -n (prompt_pwd)
-    set_color normal
+# Catppuccin Mocha colors
+set mocha_mauve "#cba6f7"
+set mocha_green "#a6e3a1"
+set mocha_blue "#89b4fa"
+set mocha_text "#cdd6f4"
+set mocha_peach "#fab387"
 
-    # Show git branch if in repo
+# ENV
+set -gx ANDROID_HOME ~/Android/Sdk/
+set -gx NDK_HOME ~/Android/Sdk/ndk/29.0.13846066/
+
+function fish_prompt
+    # Line 1: [user@host] [cwd] [git branch]
+    set_color $mocha_mauve
+    echo -n (whoami)
+
+    set_color $mocha_text
+    echo -n "@"
+
+    set_color $mocha_mauve
+    echo -n (string split '.' $hostname)[1]
+
+    set_color $mocha_text
+    echo -n " in "
+
+    set_color $mocha_green
+    echo -n (prompt_pwd)
+
+    # Git branch
     set branch (git symbolic-ref --short HEAD ^/dev/null 2>/dev/null)
     if test -n "$branch"
-        set_color blue
-        echo -n " [$branch]"
-        set_color normal
+        set_color $mocha_text
+        echo -n " on "
+        set_color $mocha_blue
+        echo -n $branch
     end
 
-    echo -n \n
-    echo -n "> "
+    # New line + prompt symbol
+    echo ""
+    set_color $mocha_peach
+    echo -n "❯ "
+    set_color normal
 end
-
-# Use human-readable sizes in ls
-alias ls="ls --color=auto -h"
-alias ll="ls -lAh"
-
-# Quick cd shortcuts
-alias ..="cd .."
-alias ...="cd ../.."
-
-# Add any custom PATH additions here
-# set -gx PATH $HOME/.local/bin $PATH
