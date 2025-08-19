@@ -1668,6 +1668,7 @@ complete -c deno -n "__fish_deno_using_subcommand repl" -l no-prompt
 complete -c deno -n "__fish_deno_using_subcommand repl" -l cached-only -d 'Require that remote dependencies are already cached'
 complete -c deno -n "__fish_deno_using_subcommand repl" -l enable-testing-features-do-not-use -d 'INTERNAL: Enable internal features used during integration testing'
 complete -c deno -n "__fish_deno_using_subcommand repl" -l eszip-internal-do-not-use
+complete -c deno -n "__fish_deno_using_subcommand repl" -l json
 complete -c deno -n "__fish_deno_using_subcommand task" -s h -l help -r -f -a "unstable\t''
 full\t''"
 complete -c deno -n "__fish_deno_using_subcommand task" -s L -l log-level -d 'Set log level' -r -f -a "trace\t''

@@ -12,6 +12,10 @@ end
 bind \e\[A history-search-backward
 bind \e\[B history-search-forward
 
+# Aliases
+alias cc clear
+alias rmrf "rm -rf"
+
 # Catppuccin Mocha colors
 set mocha_mauve "#cba6f7"
 set mocha_green "#a6e3a1"
@@ -20,8 +24,7 @@ set mocha_text "#cdd6f4"
 set mocha_peach "#fab387"
 
 # ENV
-set -gx ANDROID_HOME ~/Android/Sdk/
-set -gx NDK_HOME ~/Android/Sdk/ndk/29.0.13846066/
+set -gx PATH = "$PATH:/home/max/.dotnet/tools"
 
 function fish_prompt
     # Line 1: [user@host] [cwd] [git branch]
