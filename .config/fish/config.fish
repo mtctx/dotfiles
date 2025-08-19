@@ -15,6 +15,7 @@ bind \e\[B history-search-forward
 # Aliases
 alias cc clear
 alias rmrf "rm -rf"
+alias pacman "sudo pacman"
 
 # Catppuccin Mocha colors
 set mocha_mauve "#cba6f7"
