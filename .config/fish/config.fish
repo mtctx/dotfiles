@@ -13,6 +13,7 @@ bind \e\[A history-search-backward
 bind \e\[B history-search-forward
 
 # Aliases
+alias hx helix
 alias cc clear
 alias rmrf "rm -rf"
 alias pacman "sudo pacman"
