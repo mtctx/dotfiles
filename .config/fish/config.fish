@@ -13,7 +13,7 @@ bind \e\[A history-search-backward
 bind \e\[B history-search-forward
 
 # Aliases
-alias hx helix
+alias updatemirrors "sudo reflector -c Germany -c Switzerland -c Denmark -c Netherlands -c France -c Austria -c Luxembourg -c Belgium  --latest 80 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 alias cc clear
 alias rmrf "rm -rf"
 alias pacman "sudo pacman"
